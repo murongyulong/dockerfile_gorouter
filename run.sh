@@ -9,9 +9,9 @@ for i in ${require_env[@]}; do
         exit 1;
     fi
 done
-confFile=$GOPATH/src/github.com/dinp/gorouter/config/router.yml
+confFile=$GOPATH/src/github.com/dinp/longrouter/config/router.yml
 sed -i "s/{REDIS_HOST}/${REDIS_PORT_6379_TCP_ADDR}/g" $confFile \
-&& sed -i "s/{REDIS_PORT}/${REDIS_PORT_6379_TCP_PORT}/g" $confFile 
+&& sed -i "s/{REDIS_PORT}/${REDIS_PORT_6379_TCP_PORT}/g" $confFile
 
-cd $GOPATH/src/github.com/dinp/gorouter/
-./gorouter -c=config/router.yml
+cd $GOPATH/src/github.com/dinp/longrouter/
+./longrouter -c=config/router.yml
